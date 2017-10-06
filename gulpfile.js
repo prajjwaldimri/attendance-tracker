@@ -6,6 +6,7 @@ let uglify = require('gulp-uglify');
 let cleanCSS = require('gulp-clean-css');
 let sourceMaps = require('gulp-sourcemaps');
 let imagemin = require('gulp-imagemin');
+let babel = require('gulp-babel');
 
 // Convert and minify sass files
 gulp.task('sass', function () {
@@ -22,6 +23,7 @@ gulp.task('sass', function () {
 gulp.task('uglify', function () {
   gulp
     .src('./src/js/*.js')
+    .pipe(babel())
     .pipe(
       uglify().on('error', function (err) {
         console.log(err);

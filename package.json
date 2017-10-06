@@ -51,6 +51,7 @@
     "validator": "^8.2.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "debug": "^3.1.0",
     "eslint-config-semistandard": "^11.0.0",
@@ -58,6 +59,7 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-imagemin": "^3.4.0",
     "gulp-sass": "^3.1.0",
