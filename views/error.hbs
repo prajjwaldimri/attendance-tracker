@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  {{> head}}
+</head>
+
+<body>
+  {{> navbar}}
+
+
+  <ul class="collapsible " data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header red darken-4"><i class="material-icons">error</i>{{error}}</div>
+      <div class="collapsible-body"><span>{{message}}</span></div>
+    </li>
+  </ul>
+
+  {{> footer}} {{> toast}}
+
+</body>
+
+</html>

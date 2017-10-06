@@ -1,0 +1,31 @@
+<nav class="grey darken-3">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo" style="margin-left: 1%; font-size: 1.6rem">Artist Tracker</a>
+    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+
+    <ul class="right hide-on-med-and-down">
+      <li><a href="search.html"><i class="material-icons">search</i></a></li>
+      {{#if user}}
+        <li><a href="/profile" class="valign-wrapper">{{user.username}} &nbsp;
+          <img height="50px" width="50px" class="circle responsive-img" src='{{user.gravatar}}' alt="Gravatar"></img>
+        </a></li>
+        <li><a href="/logout"><i class="material-icons" aria-label="Logout">power_settings_new</i></a></li>
+      {{else}}
+        <li><a href="/login">SIGN IN</a></li>
+      {{/if}}
+    </ul>
+
+    <!--Mobile Menu -->
+    <ul class="side-nav" id="mobile-menu">
+      <li><a href="search.html"><i class="material-icons">search</i></a></li>
+      {{#if user}}
+        <li><a href="/profile" class="valign-wrapper">{{user.username}} &nbsp;
+          <img height="50px" width="50px" class="circle responsive-img" src='{{user.gravatar}}' alt="Gravatar"></img>
+        </a></li>
+      {{else}}
+        <li><a href="/login">SIGN IN</a></li>
+      {{/if}}
+    </ul>
+
+  </div>
+</nav>

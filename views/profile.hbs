@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+  {{> head}}
+</head>
+
+<body>
+  {{> navbar}}
+
+  <div class="row">
+    <div class="col s12" style="padding: 0">
+      {{!--Top Tabs --}}
+      <ul class="tabs grey darken-4 tabs-fixed-width z-depth-1">
+        <li class="tab col s3 white-text"><a class="active" href="#add">Favorite Artists</a></li>
+        <li class="tab col s3 white-text"><a href="#edit">Edit Profile</a></li>
+        <li class="tab col s3 white-text"><a href="#preferences">Preferences</a></li>
+      </ul>
+    </div>
+    {{!-- Edit Profile Form --}}
+    <div id="edit" class="col s12">
+      <div class="container" style="padding-top: 5%">
+        <form class="col s8 offset-s2" action="/account" method="post" name="profile-edit">
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="email" value="{{user.email}}" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="current-password" id="current-password" type="password" class="validate" required>
+              <label for="current-password">Current Password</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="password" id="password" type="password" class="validate">
+              <label for="password">New Password</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="password-confirm" id="password-confirm" type="password" class="validate">
+              <label for="password-confirm">Confirm New Password</label>
+            </div>
+          </div>
+
+          <div class="row center">
+            <div class="input-field">
+              <button class="btn waves-effect waves-light indigo" type="submit" name="action">Update Profile <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="add" class="col s12">
+      <div class="container">
+        <h2>Test</h2>
+      </div>
+    </div>
+  </div>
+
+  {{> footer}}
+
+
+  <script type="text/javascript" src="/js/profile.js"></script>
+  <script type="text/javascript" src="/js/validate.min.js"></script>
+  <script type="text/javascript">
+    // Validator JS
+    var validator = new FormValidator(
+      'profile-edit', [{
+        name: 'password-confirm',
+        display: 'confirm password',
+        rules: 'matches[password]'
+      }],
+      function(errors, event) {
+        if (errors.length > 0) {
+          errors.forEach(function(error) {
+            Materialize.toast(error.message, 4000, 'red');
+          });
+        }
+      }
+    );
+  </script>
+
+  {{> toast}}
+</body>
+
+</html>

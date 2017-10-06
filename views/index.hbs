@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+  {{> head}}
+</head>
+
+<body>
+  {{> navbar}}
+  {{#if flashes}}
+    {{#each flashes.success}}
+      <h3>Success: {{this}}</h3>
+    {{/each}}
+    {{#each flashes.info}}
+      <h3>Info: {{this}}</h3>
+    {{/each}}
+  {{/if}}
+
+  {{#if user.gravatar}}
+    <img src='{{user.gravatar}}' alt="">
+  {{/if}}
+
+
+  {{> footer}}
+</body>
+
+</html>
