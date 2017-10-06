@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
-const searchController = require('../controllers/searchController');
-const artistController = require('../controllers/artistController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', userController.index);
@@ -38,13 +36,5 @@ router.post(
   authController.confirmedPasswords,
   catchErrors(authController.update)
 );
-// POST artistName to this route to add it to a user's favorites
-router.post(
-  '/account/addArtist',
-  authController.isLoggedIn,
-  catchErrors(artistController.addNewArtist)
-);
-
-router.get('/search/:artistName', catchErrors(searchController.search));
 
 module.exports = router;

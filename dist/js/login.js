@@ -1,1 +1,1 @@
-$(document).ready(function(){Materialize.updateTextFields(),$(".button-collapse").sideNav()});
+"use strict";$(document).ready(function(){Materialize.updateTextFields(),$(".button-collapse").sideNav()});

@@ -1,1 +1,1 @@
-console.log("Gulp Working");
+"use strict";console.log("Gulp Working");

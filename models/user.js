@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema({
     trim: true,
     validate: [validator.isEmail, 'Not a valid email']
   },
-  fav_artists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Artist' }],
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
