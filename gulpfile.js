@@ -41,15 +41,6 @@ gulp.task('imgmin', function () {
     .pipe(gulp.dest('./dist/img'));
 });
 
-// Build materialize-css library
-gulp.task('materialize-css', function () {
-  gulp
-    .src('./libs/materialize-src/sass/materialize.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest('./dist/css'));
-});
-
 // Watch files for changes
 gulp.task('watch', function () {
   gulp.watch('./src/js/*.js', ['uglify']);
@@ -59,4 +50,4 @@ gulp.task('watch', function () {
 });
 
 // Default Task that runs all other tasks
-gulp.task('default', ['sass', 'uglify', 'imgmin', 'materialize-css', 'watch']);
+gulp.task('default', ['sass', 'uglify', 'imgmin', 'watch']);
