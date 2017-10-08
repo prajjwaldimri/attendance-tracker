@@ -1,6 +1,9 @@
 {{#if flashes}}
   {{#each flashes.error}}
     <script type="text/javascript">
+      iziToast.show({
+        message: '{{@this}}'
+      });
       Materialize.toast('{{@this}}', 4000, 'red');
     </script>
   {{/each}}
