@@ -2,24 +2,37 @@
   {{#each flashes.error}}
     <script type="text/javascript">
       iziToast.show({
-        message: '{{@this}}'
+        message: '{{@this}}',
+        color: 'red',
+        position: 'topRight'
       });
-      Materialize.toast('{{@this}}', 4000, 'red');
     </script>
   {{/each}}
   {{#each flashes.info}}
     <script type="text/javascript">
-      Materialize.toast('{{@this}}', 4000, 'blue');
+      iziToast.show({
+        message: '{{@this}}',
+        color: 'blue',
+        position: 'topRight'
+      });
     </script>
   {{/each}}
   {{#each flashes.warning}}
     <script type="text/javascript">
-      Materialize.toast('{{@this}}', 4000, 'amber');
+      iziToast.show({
+        message: '{{@this}}',
+        color: 'yellow',
+        position: 'topRight'
+      });
     </script>
   {{/each}}
   {{#each flashes.success}}
     <script type="text/javascript">
-      Materialize.toast('{{@this}}', 4000, 'green');
+      iziToast.show({
+        message: '{{@this}}',
+        color: 'green',
+        position: 'topRight'
+      });
     </script>
   {{/each}}
 {{/if}}
